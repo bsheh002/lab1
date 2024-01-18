@@ -6,7 +6,7 @@ using namespace std;
 
 Playlist* playPtr;
 
-void MenuDisplay(string t1){
+void MenuDisplay(string t1){    //a function that allows for a menu of options to be viewed
     char choice;
 
     string songName;
@@ -28,10 +28,10 @@ void MenuDisplay(string t1){
     cout << "Choose an option:" << endl;
     cin >> choice;
     cin.ignore();
-    if(choice == 'q'){
+    if(choice == 'q'){    //checks to see if user input is the char 'q' in order to quit the program
         return;
     }
-    else if(choice == 'a'){
+    else if(choice == 'a'){    //checks to see if user input is the char 'a' in order to ask user for inputs to add a new song
         cout << "ADD SONG" << endl;
         cout << "Enter song's unique ID:" << endl;
         getline(cin,ID);
@@ -49,7 +49,7 @@ void MenuDisplay(string t1){
         cout << endl;
         MenuDisplay(t1);
     }
-    else if (choice == 'd'){
+    else if (choice == 'd'){ //checks to see if user input is the char 'd' in order task for user input to find a song and delete it
         cout << "REMOVE SONG" << endl;
         cout << "Enter Song's unique ID: " << endl;
         getline(cin,ID);
@@ -57,11 +57,11 @@ void MenuDisplay(string t1){
         cout << endl;
         MenuDisplay(t1);
     }
-    else if (choice == 'o') {
+    else if (choice == 'o') { //checks to see if user input is the char 'o' in order to display a full list of the songs available
         playPtr->OutputPlayList(t1);
         MenuDisplay(t1);
     }
-    else if (choice == 's'){
+    else if (choice == 's'){ //checks to see if user input is the char 's' in order to ask user for an artist and find songs created only by that artist
         cout << "OUTPUT SONGS BY SPECIFIC ARTIST" << endl;
         cout << "Enter artist's name:" << endl;
         cout << endl;
@@ -70,13 +70,13 @@ void MenuDisplay(string t1){
         playPtr->specificArtistSong(name);
         MenuDisplay(t1);
     }
-    else if (choice == 't'){
+    else if (choice == 't'){ //checks to see if user input is the char 't' in order to calculate the length of the playlist in seconds and display it
         cout << "OUTPUT TOTAL TIME OF PLAYLIST (IN SECONDS)" << endl;
         playPtr->playlistLength();
         cout << endl;
         MenuDisplay(t1);
     }
-    else if (choice == 'c'){
+    else if (choice == 'c'){ //checks to see if user input is the char 'c' in order to ask the user the location the song should be moved to in the playlist
         cout << "CHANGE POSITION OF SONG" << endl;
         playPtr->changePos();
         MenuDisplay(t1);
