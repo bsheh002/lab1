@@ -11,7 +11,7 @@ PlaylistNode:: PlaylistNode(){ //constructor
     songLength = 0;
     nextNodePtr = nullptr;
 }
-PlaylistNode:: PlaylistNode(string _uniqueID, string _songName, string _artistName, int _songLength){ //copy assignment operator
+PlaylistNode:: PlaylistNode(string _uniqueID, string _songName, string _artistName, int _songLength){ //copy constructor
     uniqueID = _uniqueID;
     songName = _songName;
     artistName = _artistName;
